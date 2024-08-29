@@ -1,70 +1,385 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
+import React from "react";
+import Entypo from "@expo/vector-icons/Entypo";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Feather from "@expo/vector-icons/Feather";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+export default function HomeScreens() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView>
+      <View>
+        <View style={styles.header}>
+          <Entypo name="menu" size={35} color="#5d5d5d" />
+          <Text style={styles.headerText}>VuDung, Vn</Text>
+          <View>
+            <Ionicons name="notifications" size={30} color="#5d5d5d" />
+            <View style={styles.notificationBadge}></View>
+          </View>
+        </View>
+        <ScrollView>
+          <View>
+            <View style={styles.profileHeader}>
+              <View style={styles.profileInfo}>
+                <View style={styles.avatarContainer}>
+                  <Image
+                    source={require("../../assets/images/Icon/avatar.jpg")}
+                    style={styles.avatar}
+                  />
+                  <View style={styles.onlineBadge}></View>
+                </View>
+                <View>
+                  <Text style={styles.profileName}>Vũ Dũng</Text>
+                </View>
+              </View>
+              <View>
+                <Entypo
+                  name="dots-three-horizontal"
+                  size={24}
+                  color="#5d5d5d"
+                />
+              </View>
+            </View>
+            <View style={styles.postContainer}>
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={require("../../assets/images/Post/1.jpg")}
+                    style={styles.postImage}
+                  />
+                </View>
+              </TouchableOpacity>
+              <View style={styles.postActions}>
+                <View style={styles.actionButtons}>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/1.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/2.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/3.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <Feather name="share" size={25} color="#5d5d5d" />
+                </View>
+              </View>
+              <View style={styles.postCaption}>
+                <Text>
+                  When you try a little too hard to pose for the camera...
+                </Text>
+                <Text style={styles.seeMoreText}>Xem thêm</Text>
+              </View>
+              <View style={styles.commentsSection}>
+                <View>
+                  <Text style={styles.commentsText}>Xem tất cả bình luận</Text>
+                </View>
+                <View>
+                  <Text style={styles.commentsText}>23 tháng 5</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View style={styles.profileHeader}>
+              <View style={styles.profileInfo}>
+                <View style={styles.avatarContainer}>
+                  <Image
+                    source={require("../../assets/images/Icon/avatar.jpg")}
+                    style={styles.avatar}
+                  />
+                  <View style={styles.onlineBadge}></View>
+                </View>
+                <View>
+                  <Text style={styles.profileName}>Vũ Dũng</Text>
+                </View>
+              </View>
+              <View>
+                <Entypo
+                  name="dots-three-horizontal"
+                  size={24}
+                  color="#5d5d5d"
+                />
+              </View>
+            </View>
+            <View style={styles.postContainer}>
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={require("../../assets/images/Post/2.jpg")}
+                    style={styles.postImage}
+                  />
+                </View>
+              </TouchableOpacity>
+              <View style={styles.postActions}>
+                <View style={styles.actionButtons}>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/1.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/2.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/3.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <Feather name="share" size={25} color="#5d5d5d" />
+                </View>
+              </View>
+              <View style={styles.postCaption}>
+                <Text>
+                  When you try a little too hard to pose for the camera...
+                </Text>
+                <Text style={styles.seeMoreText}>Xem thêm</Text>
+              </View>
+              <View style={styles.commentsSection}>
+                <View>
+                  <Text style={styles.commentsText}>Xem tất cả bình luận</Text>
+                </View>
+                <View>
+                  <Text style={styles.commentsText}>23 tháng 5</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View>
+            <View style={styles.profileHeader}>
+              <View style={styles.profileInfo}>
+                <View style={styles.avatarContainer}>
+                  <Image
+                    source={require("../../assets/images/Icon/avatar.jpg")}
+                    style={styles.avatar}
+                  />
+                  <View style={styles.onlineBadge}></View>
+                </View>
+                <View>
+                  <Text style={styles.profileName}>Vũ Dũng</Text>
+                </View>
+              </View>
+              <View>
+                <Entypo
+                  name="dots-three-horizontal"
+                  size={24}
+                  color="#5d5d5d"
+                />
+              </View>
+            </View>
+            <View style={styles.postContainer}>
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={require("../../assets/images/Post/3.jpg")}
+                    style={styles.postImage}
+                  />
+                </View>
+              </TouchableOpacity>
+              <View style={styles.postActions}>
+                <View style={styles.actionButtons}>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/1.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/2.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.actionButton}>
+                      <Image
+                        source={require("../../assets/images/Icon/3.png")}
+                        style={styles.actionIcon}
+                      />
+                      <Text style={styles.actionText}>66.9K</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <Feather name="share" size={25} color="#5d5d5d" />
+                </View>
+              </View>
+              <View style={styles.postCaption}>
+                <Text>
+                  When you try a little too hard to pose for the camera...
+                </Text>
+                <Text style={styles.seeMoreText}>Xem thêm</Text>
+              </View>
+              <View style={styles.commentsSection}>
+                <View>
+                  <Text style={styles.commentsText}>Xem tất cả bình luận</Text>
+                </View>
+                <View>
+                  <Text style={styles.commentsText}>23 tháng 5</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    padding: 10,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  headerText: {
+    fontSize: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
+  notificationBadge: {
+    backgroundColor: "#c90037",
+    height: 10,
+    width: 10,
+    borderRadius: 50,
+    position: "absolute",
+    top: 0,
+    right: 1,
+  },
+  profileHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+  },
+  profileInfo: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 10,
+  },
+  avatarContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+  },
+  onlineBadge: {
+    width: 10,
+    height: 10,
+    borderRadius: 50,
+    backgroundColor: "#00E53D",
+    position: "absolute",
     bottom: 0,
-    left: 0,
-    position: 'absolute',
+    left: 35,
+  },
+  profileName: {
+    fontSize: 15,
+    fontWeight: "bold",
+  },
+  postContainer: {
+    paddingHorizontal: 10,
+  },
+  postImage: {
+    width: "100%",
+    height: 190,
+    borderRadius: 10,
+  },
+  postActions: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  actionButtons: {
+    display: "flex",
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    paddingVertical: 10,
+  },
+  actionButton: {
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+  },
+  actionIcon: {
+    width: 30,
+    height: 30,
+  },
+  actionText: {
+    fontSize: 15,
+  },
+  postCaption: {
+    justifyContent: "flex-start",
+    flexDirection: "row",
+  },
+  seeMoreText: {
+    color: "#A1A1A1",
+  },
+  commentsSection: {
+    paddingVertical: 5,
+    gap: 5,
+  },
+  commentsText: {
+    color: "#A1A1A1",
   },
 });
